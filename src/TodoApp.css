@@ -1,0 +1,54 @@
+.todo-app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.todo-app input[type='text'] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.todo-app .add-todo.primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.todo-app .add-todo.primary:hover {
+    background-color: #0056b3;
+}
+
+.todo-app .todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-app .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.todo-app .todo-item.completed .task-text {
+    text-decoration: line-through;
+}
+
+.todo-app .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.todo-app .delete-btn:hover {
+    background-color: #c82333;
+}
