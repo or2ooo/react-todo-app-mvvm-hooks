@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-todo-app-mvvm-hooks/static/css/main.ecdaf059.css",
+    "main.js": "/react-todo-app-mvvm-hooks/static/js/main.9b68fba6.js",
+    "index.html": "/react-todo-app-mvvm-hooks/index.html",
+    "main.ecdaf059.css.map": "/react-todo-app-mvvm-hooks/static/css/main.ecdaf059.css.map",
+    "main.9b68fba6.js.map": "/react-todo-app-mvvm-hooks/static/js/main.9b68fba6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ecdaf059.css",
+    "static/js/main.9b68fba6.js"
+  ]
+}
