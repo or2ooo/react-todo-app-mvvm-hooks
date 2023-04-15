@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { CounterModel } from './CounterModel';
+import { useState } from "react";
+import { CounterModel } from "./CounterModel";
 
 export const useCounterViewModel = (): CounterModel => {
     const [count, setCount] = useState(0);
@@ -12,5 +12,9 @@ export const useCounterViewModel = (): CounterModel => {
         setCount(count - 1);
     };
 
-    return { count, increment, decrement };
+    return {
+        count,
+        increment,
+        decrement,
+    };
 };

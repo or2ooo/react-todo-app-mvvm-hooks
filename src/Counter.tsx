@@ -1,14 +1,25 @@
-import React from 'react';
-import { useCounterViewModel } from './CounterViewModelContext';
+import React from "react";
+import { useCounterViewModelContext } from "./CounterViewModelContext";
+import styles from "./Counter.module.css";
 
 const Counter: React.FC = () => {
-    const counterViewModel = useCounterViewModel();
+    const counterViewModel = useCounterViewModelContext();
 
     return (
         <div>
-            <h1>Counter: {counterViewModel.count}</h1>
-            <button onClick={counterViewModel.increment}>Increment</button>
-            <button onClick={counterViewModel.decrement}>Decrement</button>
+            <div className={styles.counterDisplay}>{counterViewModel.count}</div>
+            <button
+                className={`${styles.button}`}
+                onClick={() => counterViewModel.increment()}
+            >
+                Increment
+            </button>
+            <button
+                className={`${styles.button} ${styles.decrement}`}
+                onClick={() => counterViewModel.decrement()}
+            >
+                Decrement
+            </button>
         </div>
     );
 };

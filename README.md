@@ -4,7 +4,11 @@ This is a simple React app demonstrating the ViewModel-first approach using Reac
 
 ## Overview
 
-This project is built using Create React App and TypeScript. The main purpose of the project is to showcase how to implement the ViewModel-first approach in a React application.
+This project is built using Create React App and TypeScript. The main purpose of the project is to showcase how to implement the ViewModel-first approach in a React application using React Context and `useState` for state management, without relying on third-party libraries such as MobX or Redux.
+
+In this example, the ViewModel logic is separated from the view components, and the ViewModel instance is shared with the components using React Context. This helps achieve a clean separation of concerns and makes the code more maintainable and testable.
+
+The project includes a simple counter component that demonstrates the ViewModel-first approach.
 
 ### ViewModel-first Approach Explanation
 

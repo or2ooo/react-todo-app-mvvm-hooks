@@ -1,23 +1,22 @@
-import React from 'react';
-import Counter from './Counter';
-import { useCounterViewModel } from './useCounterViewModel';
-import { CounterViewModelContext } from './CounterViewModelContext';
+import React from "react";
+import Counter from "./Counter";
+import { CounterViewModelProvider } from "./CounterViewModelContext";
+import { useCounterViewModel } from "./useCounterViewModel";
+import styles from "./App.module.css";
 
 const App: React.FC = () => {
   const counterViewModel = useCounterViewModel();
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React App with useState and ViewModel-first approach</h1>
-      </header>
-      <main>
-        <CounterViewModelContext.Provider value={counterViewModel}>
+    <div className={styles.appContainer}>
+      <div>
+        <h1 className={styles.appTitle}>React ViewModel-first Approach with Context</h1>
+        <CounterViewModelProvider value={counterViewModel}>
           <Counter />
-        </CounterViewModelContext.Provider>
-      </main>
+        </CounterViewModelProvider>
+      </div>
     </div>
   );
-};
+}
 
 export default App;
