@@ -1,78 +1,81 @@
-# React Todo App with MVVM, Hooks, and MobX
+# React ViewModel-first Approach with Context
 
-This is a simple Todo App built using React, Hooks, and MobX, following the Model-View-ViewModel (MVVM) pattern.
-You can check the [live demo here](https://or2ooo.github.io/react-todo-app-mvvm-hooks/).
+This is a simple React app demonstrating the ViewModel-first approach using React Context and `useState` for state management.
 
-## Table of Contents
+## Overview
 
-- [Getting Started](#getting-started)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Technologies](#technologies)
-- [Contributing](#contributing)
-- [Code of Conduct](#code-of-conduct)
-- [License](#license)
+This project is built using Create React App and TypeScript. The main purpose of the project is to showcase how to implement the ViewModel-first approach in a React application.
+
+### ViewModel-first Approach Explanation
+
+In this example, the ViewModel-first approach is implemented by separating the ViewModel logic from the view components. The main idea behind this approach is to create a ViewModel that handles the application's state and logic, and then bind the ViewModel instance to the view components using React Context. This helps achieve a clean separation of concerns and makes the code more maintainable.
+
+Here's why the given example follows the ViewModel-first approach:
+
+1. The ViewModel is defined as an interface in `CounterModel.ts`. This interface declares the properties and methods that the ViewModel should have.
+2. The `useCounterViewModel.ts` file contains the custom hook `useCounterViewModel`, which implements the ViewModel's logic using `useState`. This hook returns an instance of the ViewModel that adheres to the `CounterModel` interface.
+3. The `CounterViewModelContext.tsx` file creates a React Context that will be used to provide the ViewModel instance to components in the application. It also exports a custom hook, `useCounterViewModelContext`, which is a convenient way to access the ViewModel instance in any component.
+4. In the `App.tsx` file, the ViewModel instance is created by calling the `useCounterViewModel` hook. Then, the `CounterViewModelContext.Provider` is used to provide the ViewModel instance to the components in the application.
+5. Finally, the `Counter.tsx` file represents the view component that consumes the ViewModel instance. The `useCounterViewModelContext` hook is used to access the ViewModel instance, and the view component interacts with the ViewModel to update and display the state.
+
+By organizing the code this way, the ViewModel logic is encapsulated, and components can easily consume the ViewModel instance without having to manage the state and logic themselves. This approach helps achieve a clean separation of concerns and improves the code's maintainability and testability.
+
+## Features
+
+- ViewModel-first approach
+- React Context for providing the ViewModel instance
+- `useState` for state management
 
 ## Getting Started
 
-To get started, follow these steps:
+### Prerequisites
+
+Ensure you have Node.js and yarn installed on your local machine.
+
+### Installation
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/your-username/react-todo-app-mvvm-hooks.git
+git clone https://github.com/or2ooo/react-todo-app-mvvm-hooks.git
 ```
 
-2. Change the current working directory:
+2. Install the dependencies:
+
 ```bash
-cd react-todo-app-mvvm-hooks
+yarn install
 ```
 
-3. Install dependencies:
-```bash
-yarn
-```
+### Running the App
 
-4. Run the development server:
+To run the app in development mode, execute the following command:
+
 ```bash
 yarn start
 ```
 
-Now you should be able to access the app at [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) to view the app in the browser. The page will reload if you make edits, and you will see any lint errors in the console.
 
-## Features
+### Building the App
 
-- Add and remove todos
-- Mark todos as completed
-- Reactive UI updates using MobX
-- Custom ViewModel hook for managing state and actions
-- Styling using CSS modules
+To build the app for production, run:
 
-## Project Structure
+```bash
+yarn build
+```
 
-- `src/`
-  - `App.jsx`: The main application component that renders the `TodoApp` component.
-  - `TodoApp.jsx`: The component responsible for rendering and managing the todo list.
-  - `TodoModel.js`: The model representing the todo data structure and operations.
-  - `useTodoViewModel.js`: The custom ViewModel hook that manages state and actions for the `TodoApp` component.
-  - `index.js`: The entry point of the React application.
-  - `index.css`: The global CSS styles.
-  - `TodoApp.css`: The CSS styles specific to the `TodoApp` component.
-
-## Technologies
-
-- [React](https://react.dev/): A JavaScript library for building user interfaces.
-- [Hooks](https://react.dev/reference/react): Functions that let you use state and other React features without writing a class.
-- [MobX](https://mobx.js.org/): A state management library for React that makes it simple to manage the state of your application.
-- [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel): A software architectural pattern that separates the UI from the underlying business logic and data.
+The build will be minified and optimized for best performance, and it will be output to the `build` folder.
 
 ## Contributing
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this project.
+Contributions are welcome. Please follow these steps to contribute:
 
-## Code of Conduct
-
-Please see [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+1. Fork the repository
+2. Create a new branch (``` git checkout -b feature/MyNewFeature ```)
+3. Commit your changes (``` git commit -m 'Add some feature' ```)
+4. Push to the branch (``` git push origin feature/MyNewFeature ```)
+5. Create a new Pull Request
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for details.
+This project is licensed under the MIT License.
