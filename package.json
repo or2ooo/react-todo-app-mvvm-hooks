@@ -4,9 +4,14 @@
   "private": true,
   "homepage": "https://or2ooo.github.io/react-todo-app-mvvm-hooks/",
   "dependencies": {
+    "inversify": "^6.0.1",
+    "inversify-react": "^1.1.0",
+    "mobx": "^6.9.0",
+    "mobx-react-lite": "^3.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "reflect-metadata": "^0.1.13",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -36,14 +41,14 @@
     ]
   },
   "devDependencies": {
-    "typescript": "^4.4.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "typescript": "^4.4.2"
   }
 }
