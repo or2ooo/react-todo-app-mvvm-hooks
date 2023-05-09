@@ -1,9 +1,9 @@
 import React from "react";
-import { useCounterViewModelContext } from "./CounterViewModelContext";
 import styles from "./Counter.module.css";
+import { useCounterViewModel } from "./useCounterViewModel";
 
 const Counter: React.FC = () => {
-    const counterViewModel = useCounterViewModelContext();
+    const counterViewModel = useCounterViewModel()
 
     return (
         <div>

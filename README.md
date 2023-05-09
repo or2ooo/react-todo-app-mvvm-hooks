@@ -1,34 +1,31 @@
-# React ViewModel-first Approach with Context
+# React MVVM Pattern with Hooks
 
-This is a simple React app demonstrating the ViewModel-first approach using React Context and `useState` for state management.
+This is a simple React app demonstrating the Model-View-ViewModel (MVVM) pattern using React hooks.
 
 ## Overview
 
-This project is built using Create React App and TypeScript. The main purpose of the project is to showcase how to implement the ViewModel-first approach in a React application using React Context and `useState` for state management, without relying on third-party libraries such as MobX or Redux.
+This project is built using Create React App and TypeScript. The main purpose of the project is to showcase how to implement the MVVM pattern in a React application using hooks, without relying on third-party libraries such as MobX, Redux, or the Context API.
 
-In this example, the ViewModel logic is separated from the view components, and the ViewModel instance is shared with the components using React Context. This helps achieve a clean separation of concerns and makes the code more maintainable and testable.
+In this example, the MVVM pattern is achieved by separating the model, view, and ViewModel logic. This helps achieve a clean separation of concerns and makes the code more maintainable and testable.
 
-The project includes a simple counter component that demonstrates the ViewModel-first approach.
+The project includes a simple counter component that demonstrates the MVVM pattern.
 
-### ViewModel-first Approach Explanation
+### MVVM Pattern Explanation
 
-In this example, the ViewModel-first approach is implemented by separating the ViewModel logic from the view components. The main idea behind this approach is to create a ViewModel that handles the application's state and logic, and then bind the ViewModel instance to the view components using React Context. This helps achieve a clean separation of concerns and makes the code more maintainable.
+In this example, the MVVM pattern is implemented by separating the model, view, and ViewModel logic as follows:
 
-Here's why the given example follows the ViewModel-first approach:
+1. The Model is defined in `CounterModel.ts`. This file represents the application's data and state.
+2. The `useCounterViewModel.ts` file contains the custom hook `useCounterViewModel`, which connects the model and view by implementing the ViewModel layer. This hook returns an instance of the ViewModel.
+3. The `Counter.tsx` file represents the view component that consumes the ViewModel instance. The `useCounterViewModel` hook is used to access the ViewModel instance, and the view component interacts with the ViewModel to update and display the state.
+4. The `App.tsx` file serves as the main React component for the application.
 
-1. The ViewModel is defined as an interface in `CounterModel.ts`. This interface declares the properties and methods that the ViewModel should have.
-2. The `useCounterViewModel.ts` file contains the custom hook `useCounterViewModel`, which implements the ViewModel's logic using `useState`. This hook returns an instance of the ViewModel that adheres to the `CounterModel` interface.
-3. The `CounterViewModelContext.tsx` file creates a React Context that will be used to provide the ViewModel instance to components in the application. It also exports a custom hook, `useCounterViewModelContext`, which is a convenient way to access the ViewModel instance in any component.
-4. In the `App.tsx` file, the ViewModel instance is created by calling the `useCounterViewModel` hook. Then, the `CounterViewModelContext.Provider` is used to provide the ViewModel instance to the components in the application.
-5. Finally, the `Counter.tsx` file represents the view component that consumes the ViewModel instance. The `useCounterViewModelContext` hook is used to access the ViewModel instance, and the view component interacts with the ViewModel to update and display the state.
-
-By organizing the code this way, the ViewModel logic is encapsulated, and components can easily consume the ViewModel instance without having to manage the state and logic themselves. This approach helps achieve a clean separation of concerns and improves the code's maintainability and testability.
+By organizing the code this way, the MVVM pattern is achieved, and components can easily consume the ViewModel instance without having to manage the state and logic themselves. This approach helps achieve a clean separation of concerns and improves the code's maintainability and testability.
 
 ## Features
 
-- ViewModel-first approach
-- React Context for providing the ViewModel instance
-- `useState` for state management
+- MVVM pattern with hooks
+- Clean separation of concerns
+- Improved maintainability and testability
 
 ## Getting Started
 
@@ -40,13 +37,13 @@ Ensure you have Node.js and yarn installed on your local machine.
 
 1. Clone the repository:
 
-```bash
+```sh
 git clone https://github.com/or2ooo/react-todo-app-mvvm-hooks.git
 ```
 
 2. Install the dependencies:
 
-```bash
+```sh
 yarn install
 ```
 
@@ -54,7 +51,7 @@ yarn install
 
 To run the app in development mode, execute the following command:
 
-```bash
+```sh
 yarn start
 ```
 
@@ -64,7 +61,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the app in the brows
 
 To build the app for production, run:
 
-```bash
+```sh
 yarn build
 ```
 
