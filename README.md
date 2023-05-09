@@ -1,78 +1,82 @@
-# React Todo App with MVVM, Hooks, and MobX
+# React MVVM Pattern with Hooks
 
-This is a simple Todo App built using React, Hooks, and MobX, following the Model-View-ViewModel (MVVM) pattern.
-You can check the [live demo here](https://or2ooo.github.io/react-todo-app-mvvm-hooks/).
+This is a simple React app demonstrating the Model-View-ViewModel (MVVM) pattern using React hooks.
 
-## Table of Contents
+## Overview
 
-- [Getting Started](#getting-started)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Technologies](#technologies)
-- [Contributing](#contributing)
-- [Code of Conduct](#code-of-conduct)
-- [License](#license)
+This project is built using Create React App and TypeScript. The main purpose of the project is to showcase how to implement the MVVM pattern in a React application using hooks, without relying on third-party libraries such as MobX, Redux, or the Context API.
 
-## Getting Started
+In this example, the MVVM pattern is achieved by separating the model, view, and ViewModel logic. This helps achieve a clean separation of concerns and makes the code more maintainable and testable.
 
-To get started, follow these steps:
+The project includes a simple counter component that demonstrates the MVVM pattern.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/react-todo-app-mvvm-hooks.git
-```
+### MVVM Pattern Explanation
 
-2. Change the current working directory:
-```bash
-cd react-todo-app-mvvm-hooks
-```
+In this example, the MVVM pattern is implemented by separating the model, view, and ViewModel logic as follows:
 
-3. Install dependencies:
-```bash
-yarn
-```
+1. The Model is defined in `CounterModel.ts`. This file represents the application's data and state.
+2. The `useCounterViewModel.ts` file contains the custom hook `useCounterViewModel`, which connects the model and view by implementing the ViewModel layer. This hook returns an instance of the ViewModel.
+3. The `Counter.tsx` file represents the view component that consumes the ViewModel instance. The `useCounterViewModel` hook is used to access the ViewModel instance, and the view component interacts with the ViewModel to update and display the state.
+4. The `App.tsx` file serves as the main React component for the application.
 
-4. Run the development server:
-```bash
-yarn start
-```
-
-Now you should be able to access the app at [http://localhost:3000](http://localhost:3000).
+By organizing the code this way, the MVVM pattern is achieved, and components can easily consume the ViewModel instance without having to manage the state and logic themselves. This approach helps achieve a clean separation of concerns and improves the code's maintainability and testability.
 
 ## Features
 
-- Add and remove todos
-- Mark todos as completed
-- Reactive UI updates using MobX
-- Custom ViewModel hook for managing state and actions
-- Styling using CSS modules
+- MVVM pattern with hooks
+- Clean separation of concerns
+- Improved maintainability and testability
 
-## Project Structure
+## Getting Started
 
-- `src/`
-  - `App.jsx`: The main application component that renders the `TodoApp` component.
-  - `TodoApp.jsx`: The component responsible for rendering and managing the todo list.
-  - `TodoModel.js`: The model representing the todo data structure and operations.
-  - `useTodoViewModel.js`: The custom ViewModel hook that manages state and actions for the `TodoApp` component.
-  - `index.js`: The entry point of the React application.
-  - `index.css`: The global CSS styles.
-  - `TodoApp.css`: The CSS styles specific to the `TodoApp` component.
+### Prerequisites
 
-## Technologies
+Ensure you have Node.js and yarn installed on your local machine.
 
-- [React](https://react.dev/): A JavaScript library for building user interfaces.
-- [Hooks](https://react.dev/reference/react): Functions that let you use state and other React features without writing a class.
-- [MobX](https://mobx.js.org/): A state management library for React that makes it simple to manage the state of your application.
-- [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel): A software architectural pattern that separates the UI from the underlying business logic and data.
+### Installation
+
+1. Clone the repository:
+
+```sh
+git clone https://github.com/or2ooo/react-todo-app-mvvm-hooks.git
+```
+
+2. Install the dependencies:
+
+```sh
+yarn install
+```
+
+### Running the App
+
+To run the app in development mode, execute the following command:
+
+```sh
+yarn start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app in the browser. The page will reload if you make edits, and you will see any lint errors in the console.
+
+### Building the App
+
+To build the app for production, run:
+
+```sh
+yarn build
+```
+
+The build will be minified and optimized for best performance, and it will be output to the `build` folder.
 
 ## Contributing
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this project.
+Contributions are welcome. Please follow these steps to contribute:
 
-## Code of Conduct
-
-Please see [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+1. Fork the repository
+2. Create a new branch (``` git checkout -b feature/MyNewFeature ```)
+3. Commit your changes (``` git commit -m 'Add some feature' ```)
+4. Push to the branch (``` git push origin feature/MyNewFeature ```)
+5. Create a new Pull Request
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for details.
+This project is licensed under the MIT License.

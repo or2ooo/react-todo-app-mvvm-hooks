@@ -1,6 +1,6 @@
 {
-  "short_name": "React Todo App",
-  "name": "React Todo App with MVVM, Hooks, and MobX",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,0 +1,13 @@
+.appContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.appTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
